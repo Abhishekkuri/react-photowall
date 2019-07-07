@@ -1,7 +1,7 @@
 {
   "name": "react-photowall",
   "version": "1.0.0",
-  "description": "A simple react project including other libraries such as react router, redux etc.",
+  "description": "A simple react project built in React 16, React Router, Redux & Firebase",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
