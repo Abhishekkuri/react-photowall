@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./styles.css";
+// import "./styles.css";
+import "./Styles/stylesheet.css";
+
+import Main from "./Components/Main";
 
 // function App() {
 //   return (
@@ -25,13 +28,8 @@ const tasks = ["kjhksgsg", "asgasg", "gasgafg"];
 
 const element = (
   <div>
-    <h1>List of items</h1>
-    <ol>
-      {tasks.map((item, index) => {
-        return <li key={index}>{item}</li>;
-      })}
-    </ol>
+    <Main />
   </div>
 );
 
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
