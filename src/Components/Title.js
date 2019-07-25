@@ -1,12 +1,9 @@
-import React, { Component } from "react";
-import Photo from "./Photo";
+import React from "react";
 
 import "../Styles/stylesheet.css";
 
-class Title extends Component {
-  render() {
-    return <h1>{this.props.title}</h1>;
-  }
-}
+const Title = props => {
+  return <h1>{props.title}</h1>;
+};
 
 export default Title;
