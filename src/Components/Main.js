@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+
 import PhotoWall from "./PhotoWall";
 import Title from "./Title";
+import AddPhoto from "./AddPhoto";
 
 class Main extends Component {
   constructor() {
@@ -37,11 +40,44 @@ class Main extends Component {
     }));
   }
 
+  addPhoto(postSubmitted) {
+    this.setState(state => ({
+      posts: state.posts.concat([postSubmitted])
+    }));
+  }
+
   render() {
     return (
       <div>
-        <Title title={"Photowall"} />
-        <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto} />
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <div>
+              <Title title={"Photowall"} />
+              <PhotoWall
+                posts={this.state.posts}
+                onRemovePhoto={this.removePhoto}
+              />
+            </div>
+          )}
+        />
+
+        {/* <Route path="/addPhoto" component={AddPhoto} /> */}
+
+        <Route
+          path="/addPhoto"
+          render={({ history }) => (
+            <div>
+              <AddPhoto
+                onAddPhoto={addedPost => {
+                  this.addPhoto(addedPost);
+                  history.push("/");
+                }}
+              />
+            </div>
+          )}
+        />
       </div>
     );
   }
