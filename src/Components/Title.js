@@ -1,9 +1,13 @@
 import React from "react";
-
-import "../Styles/stylesheet.css";
+import { Link } from "react-router-dom";
 
 const Title = props => {
-  return <h1>{props.title}</h1>;
+  const { title } = props;
+  return (
+    <h1>
+      <Link to={"/"}>{title}</Link>
+    </h1>
+  );
 };
 
 export default Title;
